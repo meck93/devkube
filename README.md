@@ -25,6 +25,7 @@ devkube bootstraps feature-rich Kubernetes clusters locally using Docker or on a
 - [Azure (Beta)](https://azure.microsoft.com/en-us/services/kubernetes-service/)
 - [DigitalOcean (Alpha)](https://www.digitalocean.com/products/kubernetes)
 - [Linode (Alpha)](https://www.linode.com/products/kubernetes/)
+- [Hetzner (Alpha)](https://github.com/hetznercloud/hcloud-go)
 - [Vultr (Alpha)](https://www.vultr.com/kubernetes/)
 
 ![Overview](docs/assets/overview.svg)

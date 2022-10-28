@@ -14,6 +14,7 @@ import (
 	"github.com/adrianliechti/devkube/provider/digitalocean"
 	"github.com/adrianliechti/devkube/provider/kind"
 	"github.com/adrianliechti/devkube/provider/linode"
+	"github.com/adrianliechti/devkube/provider/hetzner"
 	"github.com/adrianliechti/devkube/provider/vultr"
 )
 
@@ -50,6 +51,10 @@ func ListClusters(c *cli.Context) ([]string, error) {
 
 		if p, err := linode.NewFromEnvironment(); err == nil {
 			providers["linode"] = p
+		}
+
+		if p, err := hetzner.NewFromEnvironment(); err == nil {
+			providers["hetzner"] = p
 		}
 
 		if p, err := vultr.NewFromEnvironment(); err == nil {
