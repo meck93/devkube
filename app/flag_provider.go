@@ -14,6 +14,7 @@ import (
 	"github.com/adrianliechti/devkube/provider/digitalocean"
 	"github.com/adrianliechti/devkube/provider/kind"
 	"github.com/adrianliechti/devkube/provider/linode"
+	"github.com/adrianliechti/devkube/provider/hetzner"
 	"github.com/adrianliechti/devkube/provider/none"
 	"github.com/adrianliechti/devkube/provider/vultr"
 )
@@ -30,6 +31,7 @@ func ListProviders() []string {
 		"azure",
 		"digitalocean",
 		"linode",
+		"hetzner",
 		"vultr",
 	}
 }
@@ -88,6 +90,9 @@ func ProviderFromName(ctx context.Context, name string) (provider.Provider, erro
 
 	case "linode":
 		return linode.NewFromEnvironment()
+
+	case "hetzner":
+		return hetzner.NewFromEnvironment()
 
 	case "vultr":
 		return vultr.NewFromEnvironment()
